@@ -1,5 +1,5 @@
 
-###!/bin/bash ###
+#!/bin/bash
  
 #sudo apt install zsh
 
@@ -14,6 +14,22 @@ echo $SHELL
 
 #git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+echo
+echo
+echo
+echo "$(tput setaf 0) $(tput setab 5)================= INSTALL PIP AND I3 THEMER =====================$(tput sgr0)"
+echo
+echo
+echo
+
+sudo apt-get install python-pip
+
+cd ~/.config 
+git clone https://github.com/unix121/i3wm-themer
+cd i3wm-themer/
+sudo pip install -r requirements.txt
+
+
 cat <<EOF > ~/.Xdefaults
 ! Cursor theme
 xcursor.theme:            Vanilla-DMZ
@@ -21,18 +37,16 @@ xcursor.theme:            Vanilla-DMZ
 ! URxvt config
 URxvt*termName:           rxvt
 
-URxvt.font: 9x15bold
+URxvt.font: xft:DejaVu Sans Mono
 URxvt.letterSpace: -1
 
 urxvt*depth: 32
-urxvt*background: rgba:0000/0000/0200/c800
 
 URxvt.scrollBar:          off
 URxvt.internalBorder:     0
 URxvt*selectToClipboard:  true
 URxvt*saveLines:          10000
 
-#URxvt.perl-ext-common:    default,matcher,tabbedex,searchable-scrollback
 URxvt.urlLauncher:        /usr/bin/google-chrome
 URxvt.matcher.button:     1
 URxvt.tabbed.tabbar-fg:   8
@@ -42,10 +56,9 @@ URxvt.tabbed.tab-bg:      0
 URxvt.tabbed.new-button:  no
 URxvt.tabbed.title:       no
 
-urxvt*background:       #000000
 urxvt*foreground:       #cccccc
-#urxvt*fading:           50
-#urxvt*fadeColor:        #000000
+urxvt*fading:           50
+urxvt*fadeColor:        #000000
 
 Xft*dpi:                96
 Xft*antialias:          true
@@ -55,46 +68,16 @@ urxvt*background:       rgba:0000/0000/0000/cccc
 
 URxvt.transparent:   true
 URxvt.tintColor:     white
-URxvt.shading:       30 
- 
-! Tango color palette
-URxvt*background:         #2e3436
-URxvt*foreground:         #eeeeec
-URxvt*cursorColor:        #8ae234
-! foreground color for underline
-URxvt*colorUL:            #8ae234
-! line color for underline
-URxvt*underlineColor:     #92659a
-! black dark/light
-URxvt*color0:             #2e3436
-URxvt*color8:             #6e706b
-! red dark/light
-URxvt*color1:             #cc0000
-URxvt*color9:             #ef2929
-! green dark/light
-URxvt*color2:             #4e9a06
-URxvt*color10:            #8ae234
-! yellow dark/light
-URxvt*color3:             #edd400
-URxvt*color11:            #fce94f
-! blue dark/light
-URxvt*color4:             #3465a4
-URxvt*color12:            #729fcf
-! magenta dark/light
-URxvt*color5:             #92659a
-URxvt*color13:            #c19fbe
-! cyan dark/light
-URxvt*color6:             #07c7ca
-URxvt*color14:            #63e9e9
-! white dark/light
-URxvt*color7:             #d3d7cf
-URxvt*color15:            #eeeeec
+URxvt.shading:       15
 EOF
 
-echo  "\n \n \n$(tput setaf 0) $(tput setab 5)================= POLYBAR DEPENDENCIES ====================="
+#echo
+#echo
+#echo
+#echo "$(tput setaf 0) $(tput setab 5)================= POLYBAR DEPENDENCIES =====================$(tput sgr0)"
 
 
-sudo apt-get install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev
+#sudo apt-get install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev
 
 
 #sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="berra"/' ~/.zshrc
@@ -116,6 +99,13 @@ sudo apt-get install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev 
 
 #sed -i 's/git/plugins=(\n  zsh-autosuggestions\n  zsh-syntax-highlighting\n  git/' ~/.zshrc
 
-echo  "\n \n \n$(tput setaf 0) $(tput setab 5)================= AFTER INSTALLATION ====================="
-echo '1.'
-
+echo
+echo
+echo
+echo  "$(tput setaf 0) $(tput setab 5)================= AFTER INSTALLATION ====================="
+#echo "1. Add this to i3 config: exec_always --no-startup-id $HOME/.config/polybar/launch.sh"
+echo "1. Set urxvt as standard term in i3 config"
+echo "2. Change in i3 config so mouse wont change active window"
+echo "3. Set i3-lock-fancy as lock command shift+super+l in i3 config"
+echo "4. Copy stupid wallpaper folder from i3wm-theme folder to wherever they want it this time"
+echo "$(tput sgr0)"
