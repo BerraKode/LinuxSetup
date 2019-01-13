@@ -1,18 +1,18 @@
 
-###!/bin/zsh ###
+###!/bin/bash ###
  
-sudo apt install zsh
+#sudo apt install zsh
 
 echo $SHELL
 
-wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+#wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
-cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
-source ~/.zshrc
+#cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+#source ~/.zshrc
 
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+#git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+#git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 cat <<EOF > ~/.Xdefaults
 ! Cursor theme
@@ -97,24 +97,24 @@ echo  "\n \n \n$(tput setaf 0) $(tput setab 5)================= POLYBAR DEPENDEN
 sudo apt-get install cmake cmake-data libcairo2-dev libxcb1-dev libxcb-ewmh-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-randr0-dev libxcb-util0-dev libxcb-xkb-dev pkg-config python-xcbgen xcb-proto libxcb-xrm-dev i3-wm libasound2-dev libmpdclient-dev libiw-dev libcurl4-openssl-dev libpulse-dev
 
 
-sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="berra"/' ~/.zshrc
+#sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="berra"/' ~/.zshrc
 
-cat <<EOF > ~/.oh-my-zsh/themes/berra.zsh-theme
-local_ret_status="%(?:%{$fg_bold[green]%} ^~^| :%{$fg_bold[red]%} ^~^| )"
-PROMPT="$fg_bold[magenta]%c :%{$reset_color%} $(git_prompt_info)"
+#cat <<EOF > ~/.oh-my-zsh/themes/berra.zsh-theme
+#local_ret_status="%(?:%{$fg_bold[green]%} ^~^| :%{$fg_bold[red]%} ^~^| )"
+#PROMPT="$fg_bold[magenta]%c :%{$reset_color%} $(git_prompt_info)"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%} ^|^w"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
-EOF
+#ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
+#ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+#ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%} ^|^w"
+#ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+#EOF
 
-sed -i 's/#Global Order: zshenv, zprofile, zshrc, zlogin/export PATH=$PATH:/sbin/' ~/env/zsh/zshenv
+#sed -i 's/#Global Order: zshenv, zprofile, zshrc, zlogin/export PATH=$PATH:/sbin/' ~/env/zsh/zshenv
 
-sed -i 's/.*github.*//g' ~/.zshrc
-sed -i 's/.*plugins=(.*//g' ~/.zshrc
+#sed -i 's/.*github.*//g' ~/.zshrc
+#sed -i 's/.*plugins=(.*//g' ~/.zshrc
 
-sed -i 's/git/plugins=(\n  zsh-autosuggestions\n  zsh-syntax-highlighting\n  git/' ~/.zshrc
+#sed -i 's/git/plugins=(\n  zsh-autosuggestions\n  zsh-syntax-highlighting\n  git/' ~/.zshrc
 
 echo  "\n \n \n$(tput setaf 0) $(tput setab 5)================= AFTER INSTALLATION ====================="
 echo '1.'
